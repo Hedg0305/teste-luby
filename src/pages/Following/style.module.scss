@@ -1,0 +1,10 @@
+.wrapper{
+  display: grid;
+  max-width: 700px;
+  width: 100%;
+  grid-template-rows: 68px 1fr 80px;
+
+  .following{
+    overflow-y: scroll;
+  }
+}

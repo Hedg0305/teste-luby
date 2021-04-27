@@ -1,23 +1,20 @@
-import { createContext, useContext, useState } from 'react';
-
+import React, { createContext, useContext, useState } from 'react';
 
 export const UserContext = createContext('');
 
-export function UserContextProvider({ children }){
+export function UserContextProvider({ children }) {
   const [user, setUser] = useState({});
 
   return (
     <UserContext.Provider
       value={{
         user,
-        setUser
+        setUser,
       }}
     >
       {children}
     </UserContext.Provider>
-  )
+  );
 }
 
-export const usePlayer = () => {
-  return useContext(UserContext);
-}
+export const usePlayer = () => useContext(UserContext);
