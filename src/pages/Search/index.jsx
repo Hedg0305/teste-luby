@@ -1,25 +1,28 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import { useForm } from 'react-hook-form';
 import { AiFillGithub } from 'react-icons/ai';
 import { useHistory } from 'react-router-dom';
 
-// import { getUser } from '../../services/api';
-// import { UserContext } from '../../contexts/UserContext';
+import { getUser } from '../../services/api';
+import { UserContext } from '../../contexts/UserContext';
 
 import styles from './style.module.scss';
 
-const Searching = () => {
+const Search = () => {
   const history = useHistory();
   const { register, handleSubmit, formState: { errors } } = useForm();
-  // const {
-  //   setUser,
-  // } = useContext(UserContext);
+
+  const {
+    setUser,
+  } = useContext(UserContext);
 
   const onSubmit = async ({ user }) => {
-    // const { data } = await getUser(user);
-    // setUser(data);
-    if (user) { history.push('/home'); }
+    const { data } = await getUser(user);
+
+    setUser(data);
+
+    if (data) { history.push('/home'); }
   };
 
   return (
@@ -41,4 +44,4 @@ const Searching = () => {
   );
 };
 
-export default Searching;
+export default Search;

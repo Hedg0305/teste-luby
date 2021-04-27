@@ -7,7 +7,7 @@ import Home from './pages/Home';
 import Followers from './pages/Followers';
 import Following from './pages/Following';
 import Repos from './pages/Repos';
-import Searching from './pages/Searching';
+import Search from './pages/Search';
 
 import './styles/global.scss';
 
@@ -15,7 +15,7 @@ const App = () => (
   <div className='App'>
     <UserContextProvider>
       <BrowserRouter>
-        <Route path='/' exact component={Searching} />
+        <Route path='/' exact component={Search} />
         <Route path='/home' component={Home} />
         <Route path='/repos' component={Repos} />
         <Route path='/followers' component={Followers} />

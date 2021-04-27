@@ -75,7 +75,7 @@
   }
 
   .userBio{
-    padding: 25px 0  25px 25px;
+    padding: 25px 25px  10px 25px;
     color: var(--white);
 
     h1{
@@ -84,8 +84,8 @@
 
     p{
       font-size: 18px;
+      overflow-y: hidden;
       text-overflow: ellipsis;
-
     }
   }
 
