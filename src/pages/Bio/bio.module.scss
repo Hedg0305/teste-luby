@@ -18,8 +18,8 @@
   .userAbout{
     display: flex;
     flex-direction: column;
-    padding: 24px;
-
+    padding: 0 24px;
+    padding-bottom: 44px;
 
     img{
       height: 115px;
@@ -28,7 +28,7 @@
       position: relative;
       border: 3px solid var(--white);
       align-self: center;
-      top: -57px;
+      top: -50px;
     }
 
     .userInfo{
@@ -64,7 +64,17 @@
   }
 
   .userBio{
-    
+    padding: 50px 25px;
+    color: var(--white);
+
+    h1{
+      margin-bottom: 14px;
+    }
+
+    p{
+      font-size: 18px;
+      margin-bottom: 44px;
+    }
   }
 
 }

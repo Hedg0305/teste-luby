@@ -1,0 +1,21 @@
+.navigation{
+  display: flex;
+  padding: 16px;
+  justify-content: space-between;
+  list-style: none;
+  color: var(--white);
+  background: var(--white);
+  border-radius: 15px 15px 0 0 ;
+
+  li a{
+    color: var(--input-light-gray);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .currentPage{
+    color: var(--black);
+  }
+}

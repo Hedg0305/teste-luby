@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   outline: none;
+  font-family: Helvetica;
 }
 
 :root{
@@ -11,6 +12,8 @@
   --gray: #5252525D;
   --light-gray: #535353;
   --gray-input: #E5E5E5;
+
+  --input-light-gray: #A5A5A5;
 
   --white: #FFFFFF;
   --black: #030202;
@@ -21,10 +24,6 @@
   --font-header: Helvetica;
   --font-text: Helvetica Neue;
 
-}
-
-p, span, input{
-  font-family: Helvetica;
 }
 
 button{

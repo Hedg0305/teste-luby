@@ -7,23 +7,22 @@ import {useHistory} from 'react-router-dom'
 import { getUser } from '../../services/api';
 import { UserContext } from '../../contexts/UserContext';
 
-import styles from './home.module.scss'
+import styles from './searching.module.scss'
 
-export function Home() {
+const  Searching = () => {
   const history = useHistory();
   const { register, handleSubmit, formState: { errors } } = useForm();
   const {
-    user,
     setUser
   } = useContext(UserContext)
   
   const onSubmit = async ({user}) => {
-    const { data } = await getUser(user);
-    setUser(data);
+    console.log(user);
+    // const { data } = await getUser(user);
+    // setUser(data);
     if (user)
       history.push('/bio');
   };
-  console.log(user);
 
   return (
     <div className={styles.wrapper}>
@@ -43,3 +42,5 @@ export function Home() {
     </div>
   )
 }
+
+export default Searching;
