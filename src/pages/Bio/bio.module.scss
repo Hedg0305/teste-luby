@@ -15,9 +15,10 @@
     color: var(--white);
   }
 }
-  .userInfo{
+  .userAbout{
     display: flex;
     flex-direction: column;
+    padding: 24px;
 
 
     img{
@@ -29,6 +30,41 @@
       align-self: center;
       top: -57px;
     }
+
+    .userInfo{
+      p{
+        color: var(--white);
+        font-size: 18px;
+        font-weight: light;
+      }
+      p:first-of-type{
+        font-size: 26px;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .userNumbers{
+    display: flex;
+    padding: 12px 24px;
+    justify-content: space-between;
+    background-color: var(--gray);
+
+    div{
+      display: flex;
+      flex-direction: column;
+      color: var(--white);
+      text-align: center;
+    }
+
+    p{
+      font-size: 40px;
+      font-weight: bold;
+    }
+  }
+
+  .userBio{
+    
   }
 
 }

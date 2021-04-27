@@ -16,18 +16,34 @@ export function Bio() {
         <p>Sair</p>
       </div>
       
-      <div className={styles.userInfo}>
-          <img src={user.avatar_url} alt="Foto do usuário"/>
+      <div className={styles.userAbout}>
+        <img src={user.avatar_url} alt="Foto do usuário" />
+        <div className={styles.userInfo}>
+          <p>{user.name}</p>
+          <p>{user.email ? user.email : 'Não informado'}</p>
+          <p>{user.location}</p>
+        </div>
       </div>
       
       <div className={styles.userNumbers}>
-        <h1>numbers</h1>
+        <div>
+          <p>{user.followers}</p>
+          <span>Seguidores</span>
+        </div>
+        <div>
+          <p>{ user.following }</p>
+          <span>Seguindo</span>
+        </div>
+        
+        <div>
+          <p>{user.public_repos}</p>
+          <span>Repositórios</span>
+        </div>
       </div>
       
       <div className={styles.userBio}>
-        <h1>
-          Bio
-        </h1>
+        <h1>Bio</h1>
+        <p>{ user.bio }</p>
       </div>
       
       <div className={styles.nav}>
