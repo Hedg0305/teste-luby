@@ -1,0 +1,44 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+:root{
+  --dark-gray: #292929;
+  --very-dark-gray: #1F1F1F;
+  --light-gray: #535353;
+  --gray-input: #E5E5E5;
+
+  --white: #FFFFFF;
+  --black: #030202;
+  
+  --yellow: #FFCE00;
+  --red: #EB2D2D;
+
+  --font-header: Helvetica;
+  --font-text: Helvetica Neue;
+
+}
+
+p, span, input{
+  font-family: Helvetica;
+}
+
+button{
+  cursor: pointer;
+  border: none;
+}
+
+input{
+  border: none;
+}
+
+.App{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: var(--dark-gray);
+}

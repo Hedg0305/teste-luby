@@ -1,0 +1,34 @@
+.wrapper{
+  display: grid;
+  max-width: 700px;
+  width: 100%;
+  align-items: stretch;
+  grid-template-rows: 126px 227px 97px 1fr 80px;
+
+  .header{
+  background: var(--very-dark-gray);
+  display: flex;
+  padding: 23px 11px;
+  justify-content: space-between;
+
+  p{
+    color: var(--white);
+  }
+}
+  .userInfo{
+    display: flex;
+    flex-direction: column;
+
+
+    img{
+      height: 115px;
+      width: 115px;
+      border-radius: 50%;
+      position: relative;
+      border: 3px solid var(--white);
+      align-self: center;
+      top: -57px;
+    }
+  }
+
+}
