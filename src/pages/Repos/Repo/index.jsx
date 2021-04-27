@@ -6,7 +6,7 @@ import { BiLockOpenAlt, BiLockAlt } from 'react-icons/bi';
 import styles from './style.module.scss';
 
 const Repositorie = ({ repo }) => (
-  <div>
+  <div className={styles.wrapper}>
     <div className={styles.repo}>
       <h2>{repo.name}</h2>
 

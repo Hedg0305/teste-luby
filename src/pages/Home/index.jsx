@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { FiLogOut } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../contexts/UserContext';
@@ -6,11 +6,29 @@ import { UserContext } from '../../contexts/UserContext';
 import Navigation from '../../components/Navigation';
 
 import styles from './style.module.scss';
+import { getFollowers, getFollowing, getRepos } from '../../services/api';
 
 const Bio = () => {
   const {
     user,
+    setRepos,
+    setFollowers,
+    setFollowing,
   } = useContext(UserContext);
+
+  useEffect(() => {
+    const loadInfo = async () => {
+      const repositories = await getRepos(user.login);
+      const followers = await getFollowers(user.login);
+      const following = await getFollowing(user.login);
+
+      setRepos(repositories);
+      setFollowers(followers);
+      setFollowing(following);
+    };
+    loadInfo();
+  }, []);
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.header}>

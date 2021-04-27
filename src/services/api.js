@@ -9,5 +9,16 @@ export async function getUser(user) {
 }
 
 export async function getRepos(user) {
-  return api.get(`${user}/repos`);
+  const { data } = await api.get(`${user}/repos`);
+  return data;
+}
+
+export async function getFollowers(user) {
+  const { data } = await api.get(`${user}/followers`);
+  return data;
+}
+
+export async function getFollowing(user) {
+  const { data } = await api.get(`${user}/following`);
+  return data;
 }
