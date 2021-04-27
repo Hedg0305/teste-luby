@@ -3,7 +3,7 @@ import { Route, BrowserRouter } from 'react-router-dom';
 
 import { UserContextProvider } from './contexts/UserContext';
 
-import Bio from './pages/Bio';
+import Home from './pages/Home';
 import Followers from './pages/Followers';
 import Following from './pages/Following';
 import Repos from './pages/Repos';
@@ -16,7 +16,7 @@ const App = () => (
     <UserContextProvider>
       <BrowserRouter>
         <Route path='/' exact component={Searching} />
-        <Route path='/bio' component={Bio} />
+        <Route path='/home' component={Home} />
         <Route path='/repos' component={Repos} />
         <Route path='/followers' component={Followers} />
         <Route path='/following' component={Following} />

@@ -7,12 +7,12 @@ import styles from './style.module.scss';
 
 const ProfilesComponent = () => (
   <div>
-    <div className={styles.repo}>
+    <div className={styles.profile}>
       <img src={Img} alt='Perfil' />
 
       <p>#name</p>
 
-      <Link to='/bio'>
+      <Link to='/home'>
         <HiArrowRight size={26} />
       </Link>
     </div>

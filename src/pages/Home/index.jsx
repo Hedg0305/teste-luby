@@ -1,5 +1,7 @@
 import React from 'react';
 // import { UserContext } from '../../contexts/UserContext';
+import { FiLogOut } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 import Navigation from '../../components/Navigation';
 
 import Foto from '../../assets/perfil.jpg';
@@ -14,7 +16,11 @@ const Bio = () => (
     <div className={styles.header}>
       {/* <p>#{user.login}</p> */}
       <p>#Teste</p>
-      <p>Sair</p>
+
+      <Link to='/'>
+        <p>Sair</p>
+        <FiLogOut style={{ color: 'red', fontSize: 24 }} />
+      </Link>
     </div>
 
     <div className={styles.userAbout}>
@@ -59,6 +65,7 @@ const Bio = () => (
         provident sit vitae ea id, saepe perspiciatis odio
         similique, deleniti nesciunt veritatis laborum
         error! Optio?
+
       </p>
 
     </div>

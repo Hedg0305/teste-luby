@@ -19,7 +19,7 @@ const Searching = () => {
   const onSubmit = async ({ user }) => {
     // const { data } = await getUser(user);
     // setUser(data);
-    if (user) { history.push('/bio'); }
+    if (user) { history.push('/home'); }
   };
 
   return (

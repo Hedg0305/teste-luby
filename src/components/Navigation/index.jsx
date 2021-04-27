@@ -14,8 +14,8 @@ const Navigation = () => {
     <ul className={styles.navigation}>
       <li>
         <Link
-          to='/bio'
-          className={useRouter.path === '/bio' ? styles.currentPage : ''}
+          to='/home'
+          className={useRouter.path === '/home' ? styles.currentPage : ''}
         >
           <BiHomeAlt size={26} />
           Home
