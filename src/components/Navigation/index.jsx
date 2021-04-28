@@ -1,18 +1,15 @@
-import React, { useContext } from 'react';
-import { useRouteMatch, Link } from 'react-router-dom';
+import React from 'react';
+import { useRouteMatch, Link, useParams } from 'react-router-dom';
 
 import { BiHomeAlt } from 'react-icons/bi';
 import { FiGithub } from 'react-icons/fi';
 import { MdPeople } from 'react-icons/md';
 
 import styles from './style.module.scss';
-import { UserContext } from '../../contexts/UserContext';
 
 const Navigation = () => {
   const useRouter = useRouteMatch();
-  const {
-    id,
-  } = useContext(UserContext);
+  const { id } = useParams();
 
   return (
     <ul className={styles.navigation}>

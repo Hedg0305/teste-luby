@@ -13,7 +13,6 @@ import styles from './style.module.scss';
 const Followers = () => {
   const {
     followers,
-    setId,
     setFollowers,
   } = useContext(UserContext);
   const { id } = useParams();
@@ -21,7 +20,6 @@ const Followers = () => {
   useEffect(() => {
     const loadInfo = async () => {
       const data = await getFollowers(id);
-      setId(id);
       setFollowers(data);
     };
     loadInfo();
@@ -29,7 +27,7 @@ const Followers = () => {
 
   return (
     <div className={styles.wrapper}>
-      <Header number={10} title='Followersitórios' />
+      <Header number={followers.length} title='Seguidores' />
       <div className={styles.followers}>
         {followers
           && followers.map((follow) => <ProfilesComponent item={follow} key={follow.id} />)}

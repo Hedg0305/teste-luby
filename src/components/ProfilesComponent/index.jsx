@@ -1,17 +1,14 @@
 /* eslint-disable camelcase */
-import React from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { HiArrowRight } from 'react-icons/hi';
 
 import styles from './style.module.scss';
+import { UserContext } from '../../contexts/UserContext';
 
 const ProfilesComponent = ({ item }) => {
+  const { id } = useContext(UserContext);
   const { login, avatar_url } = item;
-  const history = useHistory();
-
-  const handleClick = () => {
-    history.push(`/${login}`);
-  };
 
   return (
     <div>
@@ -20,9 +17,9 @@ const ProfilesComponent = ({ item }) => {
 
         <p>{`#${login}`}</p>
 
-        <button type='button' onClick={handleClick}>
+        <Link to={`/${id}/temp/${login}`}>
           <HiArrowRight size={26} />
-        </button>
+        </Link>
       </div>
       <hr />
     </div>

@@ -12,7 +12,6 @@ import { getFollowing } from '../../services/api';
 const Following = () => {
   const {
     following,
-    setId,
     setFollowing,
   } = useContext(UserContext);
   const { id } = useParams();
@@ -20,7 +19,6 @@ const Following = () => {
   useEffect(() => {
     const loadInfo = async () => {
       const data = await getFollowing(id);
-      setId(id);
       setFollowing(data);
     };
     loadInfo();
@@ -28,10 +26,10 @@ const Following = () => {
 
   return (
     <div className={styles.wrapper}>
-      <Header />
+      <Header number={following.length} title='Seguindo' />
       <div className={styles.following}>
         {following
-          && following.map((follow) => <ProfilesComponent item={follow} />)}
+          && following.map((follow) => <ProfilesComponent item={follow} key={follow.id} />)}
       </div>
       <Navigation />
     </div>

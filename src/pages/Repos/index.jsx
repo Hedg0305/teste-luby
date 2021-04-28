@@ -15,14 +15,12 @@ const Repos = () => {
     user,
     repos,
     setRepos,
-    setId,
   } = useContext(UserContext);
   const { id } = useParams();
 
   useEffect(() => {
     const loadRepos = async () => {
       const repositories = await getRepos(id);
-      setId(id);
       setRepos(repositories);
     };
     loadRepos();

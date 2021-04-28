@@ -11,19 +11,25 @@ import styles from './style.module.scss';
 const User = () => {
   const {
     user,
-    setUser,
     setId,
+    setUser,
   } = useContext(UserContext);
-  const { id } = useParams();
+  const { id, tempId } = useParams();
 
   useEffect(() => {
     const loadInfo = async () => {
-      const userData = await getUser(id);
-      setId(id);
-      setUser(userData);
+      if (tempId === undefined) {
+        const userData = await getUser(id);
+        setUser(userData);
+        setId(id);
+      } else {
+        const userData = await getUser(tempId);
+        setUser(userData);
+        setId(id);
+      }
     };
     loadInfo();
-  }, [id]);
+  }, [id, tempId]);
 
   return (
     <div className={styles.wrapper}>
@@ -33,10 +39,18 @@ const User = () => {
           <div className={styles.header}>
             <p>{`#${user.login}`}</p>
 
-            <Link to='/'>
-              <p>Sair</p>
-              <FiLogOut style={{ color: 'red', fontSize: 24 }} />
-            </Link>
+            {tempId ? (
+              <Link to={`/${tempId}`}>
+                <p>Salvar</p>
+                <FiLogOut style={{ color: 'green', fontSize: 24 }} />
+              </Link>
+            )
+              : (
+                <Link to='/'>
+                  <p>Sair</p>
+                  <FiLogOut style={{ color: 'red', fontSize: 24 }} />
+                </Link>
+              )}
           </div>
 
           <div className={styles.userAbout}>
