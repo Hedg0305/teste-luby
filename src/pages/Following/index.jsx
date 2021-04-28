@@ -31,7 +31,7 @@ const Following = () => {
       <Header />
       <div className={styles.following}>
         {following
-          && following.map((follow) => <ProfilesComponent login={follow} />)}
+          && following.map((follow) => <ProfilesComponent item={follow} />)}
       </div>
       <Navigation />
     </div>

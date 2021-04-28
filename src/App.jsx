@@ -16,7 +16,7 @@ const App = () => (
     <UserContextProvider>
       <BrowserRouter>
         <Route exact path='/' component={Home} />
-        <Route exact path='/:id' component={User} />
+        <Route exact path={['/:id', '/:id/temp/:tempId']} component={User} />
         <Route exact path='/:id/repositories' component={Repos} />
         <Route exact path='/:id/followers' component={Followers} />
         <Route exact path='/:id/following' component={Following} />

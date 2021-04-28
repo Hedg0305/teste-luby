@@ -32,7 +32,7 @@ const Followers = () => {
       <Header number={10} title='Followersitórios' />
       <div className={styles.followers}>
         {followers
-          && followers.map((follow) => <ProfilesComponent login={follow} key={follow.id} />)}
+          && followers.map((follow) => <ProfilesComponent item={follow} key={follow.id} />)}
       </div>
       <Navigation />
     </div>

@@ -1,29 +1,28 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+/* eslint-disable camelcase */
+import React from 'react';
+import { useHistory } from 'react-router-dom';
 import { HiArrowRight } from 'react-icons/hi';
 
-import Img from '../../assets/perfil.jpg';
 import styles from './style.module.scss';
-import { UserContext } from '../../contexts/UserContext';
 
-const ProfilesComponent = ({ login }) => {
-  const newLogin = login;
-  const { setUser } = useContext(UserContext);
+const ProfilesComponent = ({ item }) => {
+  const { login, avatar_url } = item;
+  const history = useHistory();
 
   const handleClick = () => {
-    setUser(newLogin);
+    history.push(`/${login}`);
   };
 
   return (
     <div>
       <div className={styles.profile}>
-        <img src={Img} alt='Perfil' />
+        <img src={avatar_url} alt='Perfil' />
 
-        <p>{`#${login.login}`}</p>
+        <p>{`#${login}`}</p>
 
-        <Link to='/home'>
-          <HiArrowRight size={26} onClick={handleClick} />
-        </Link>
+        <button type='button' onClick={handleClick}>
+          <HiArrowRight size={26} />
+        </button>
       </div>
       <hr />
     </div>

@@ -7,7 +7,7 @@ export function UserContextProvider({ children }) {
   const [repos, setRepos] = useState([]);
   const [followers, setFollowers] = useState([]);
   const [following, setFollowing] = useState([]);
-  const [id, setId] = useState('');
+  const [id, setId] = useState({});
 
   return (
     <UserContext.Provider
