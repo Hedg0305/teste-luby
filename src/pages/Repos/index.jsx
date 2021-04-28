@@ -12,7 +12,6 @@ import styles from './style.module.scss';
 
 const Repos = () => {
   const {
-    user,
     repos,
     setRepos,
   } = useContext(UserContext);
@@ -28,7 +27,7 @@ const Repos = () => {
 
   return (
     <div className={styles.wrapper}>
-      <Header number={user.public_repos} title='Repositórios' />
+      <Header number={repos.length} title='Repositórios' />
 
       <div className={styles.repos}>
         {repos && repos.map((repo) => <Repositorie repo={repo} key={repo.id} />)}
