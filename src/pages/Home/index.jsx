@@ -1,77 +1,46 @@
-import React, { useContext, useEffect } from 'react';
-import { FiLogOut } from 'react-icons/fi';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+
+import { useForm } from 'react-hook-form';
+import { AiFillGithub } from 'react-icons/ai';
+import { useHistory } from 'react-router-dom';
+
+import { getUser } from '../../services/api';
 import { UserContext } from '../../contexts/UserContext';
 
-import Navigation from '../../components/Navigation';
-
 import styles from './style.module.scss';
-import { getFollowers, getFollowing, getRepos } from '../../services/api';
 
-const Bio = () => {
+const Home = () => {
+  const history = useHistory();
   const {
-    user,
-    setRepos,
-    setFollowers,
-    setFollowing,
+    setUser,
   } = useContext(UserContext);
+  const { register, handleSubmit, formState: { errors } } = useForm();
 
-  useEffect(() => {
-    const loadInfo = async () => {
-      const repositories = await getRepos(user.login);
-      const followers = await getFollowers(user.login);
-      const following = await getFollowing(user.login);
+  const onSubmit = async ({ user }) => {
+    const data = await getUser(user);
 
-      setRepos(repositories);
-      setFollowers(followers);
-      setFollowing(following);
-    };
-    loadInfo();
-  }, []);
+    setUser(data);
+
+    if (data) { history.push(`/${user}`); }
+  };
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.header}>
-        <p>{`#${user.login}`}</p>
-
-        <Link to='/'>
-          <p>Sair</p>
-          <FiLogOut style={{ color: 'red', fontSize: 24 }} />
-        </Link>
+      <div className={styles.logo}>
+        <AiFillGithub size={98} />
       </div>
 
-      <div className={styles.userAbout}>
-        <img src={user.avatar_url} alt='Foto do usuário' />
-        <div className={styles.userInfo}>
-          <p>{user.name}</p>
-          <p>{user.email ? user.email : 'Não informado'}</p>
-          <p>{user.location}</p>
-        </div>
-      </div>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <input placeholder='Usuário' {...register('user', { required: true })} />
+        {errors.user && <span>Campo obrigatório</span>}
 
-      <div className={styles.userNumbers}>
-        <div>
-          <p>{user.followers}</p>
-          <span>Seguidores</span>
-        </div>
-        <div>
-          <p>{user.following}</p>
-          <span>Seguindo</span>
-        </div>
+        <button type='submit'>
+          Entrar
+        </button>
+      </form>
 
-        <div>
-          <p>{user.public_repos}</p>
-          <span>Repositórios</span>
-        </div>
-      </div>
-
-      <div className={styles.userBio}>
-        <h1>Bio</h1>
-
-        <p>{user.bio}</p>
-      </div>
-      <Navigation />
     </div>
   );
 };
-export default Bio;
+
+export default Home;

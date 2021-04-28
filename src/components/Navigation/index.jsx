@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useRouteMatch, Link } from 'react-router-dom';
 
 import { BiHomeAlt } from 'react-icons/bi';
@@ -6,16 +6,20 @@ import { FiGithub } from 'react-icons/fi';
 import { MdPeople } from 'react-icons/md';
 
 import styles from './style.module.scss';
+import { UserContext } from '../../contexts/UserContext';
 
 const Navigation = () => {
   const useRouter = useRouteMatch();
+  const {
+    id,
+  } = useContext(UserContext);
 
   return (
     <ul className={styles.navigation}>
       <li>
         <Link
-          to='/home'
-          className={useRouter.path === '/home' ? styles.currentPage : ''}
+          to={`/${id}`}
+          className={useRouter.path === '/:id' ? styles.currentPage : ''}
         >
           <BiHomeAlt size={26} />
           Home
@@ -24,8 +28,8 @@ const Navigation = () => {
 
       <li>
         <Link
-          to='/repos'
-          className={useRouter.path === '/repos' ? styles.currentPage : ''}
+          to={`/${id}/repositories`}
+          className={useRouter.path === '/:id/repositories' ? styles.currentPage : ''}
         >
           <FiGithub size={26} />
           Repos
@@ -34,8 +38,8 @@ const Navigation = () => {
 
       <li>
         <Link
-          to='/followers'
-          className={useRouter.path === '/followers' ? styles.currentPage : ''}
+          to={`/${id}/followers`}
+          className={useRouter.path === '/:id/followers' ? styles.currentPage : ''}
         >
           <MdPeople size={26} />
           Seguidores
@@ -44,8 +48,8 @@ const Navigation = () => {
 
       <li>
         <Link
-          to='/following'
-          className={useRouter.path === '/following' ? styles.currentPage : ''}
+          to={`/${id}/following`}
+          className={useRouter.path === '/:id/following' ? styles.currentPage : ''}
         >
           <MdPeople size={26} />
           Seguindo

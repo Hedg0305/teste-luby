@@ -3,11 +3,11 @@ import { Route, BrowserRouter } from 'react-router-dom';
 
 import { UserContextProvider } from './contexts/UserContext';
 
-import Home from './pages/Home';
+import User from './pages/User';
 import Followers from './pages/Followers';
 import Following from './pages/Following';
 import Repos from './pages/Repos';
-import Search from './pages/Search';
+import Home from './pages/Home';
 
 import './styles/global.scss';
 
@@ -15,11 +15,11 @@ const App = () => (
   <div className='App'>
     <UserContextProvider>
       <BrowserRouter>
-        <Route path='/' exact component={Search} />
-        <Route path='/home' component={Home} />
-        <Route path='/repos' component={Repos} />
-        <Route path='/followers' component={Followers} />
-        <Route path='/following' component={Following} />
+        <Route exact path='/' component={Home} />
+        <Route exact path='/:id' component={User} />
+        <Route exact path='/:id/repositories' component={Repos} />
+        <Route exact path='/:id/followers' component={Followers} />
+        <Route exact path='/:id/following' component={Following} />
       </BrowserRouter>
     </UserContextProvider>
   </div>

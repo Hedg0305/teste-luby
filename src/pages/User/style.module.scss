@@ -1,0 +1,92 @@
+.wrapper{
+  display: grid;
+  max-width: 700px;
+  width: 100%;
+  align-items: stretch;
+  grid-template-rows: 126px 227px 97px 1fr 80px;
+
+  .header{
+  background: var(--very-dark-gray);
+  display: flex;
+  padding: 23px 11px;
+  justify-content: space-between;
+
+  p{
+    color: var(--white);
+  }
+
+  a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    height: 24px;
+
+    p{
+      margin-right: 12px;
+    }
+  }
+}
+  .userAbout{
+    display: flex;
+    flex-direction: column;
+    padding: 0 24px;
+    padding-bottom: 44px;
+
+    img{
+      height: 115px;
+      width: 115px;
+      border-radius: 50%;
+      position: relative;
+      border: 3px solid var(--white);
+      align-self: center;
+      top: -50px;
+    }
+
+    .userInfo{
+      p{
+        color: var(--white);
+        font-size: 18px;
+        font-weight: light;
+      }
+      p:first-of-type{
+        font-size: 26px;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .userNumbers{
+    display: flex;
+    padding: 12px 24px;
+    justify-content: space-between;
+    background-color: var(--gray);
+
+    div{
+      display: flex;
+      flex-direction: column;
+      color: var(--white);
+      text-align: center;
+    }
+
+    p{
+      font-size: 40px;
+      font-weight: bold;
+    }
+  }
+
+  .userBio{
+    padding: 25px 25px  10px 25px;
+    color: var(--white);
+
+    h1{
+      margin-bottom: 14px;
+    }
+
+    p{
+      font-size: 18px;
+      overflow-y: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+}

@@ -5,7 +5,8 @@ export const api = axios.create({
 });
 
 export async function getUser(user) {
-  return api.get(`${user}`);
+  const { data } = await api.get(`${user}`);
+  return data;
 }
 
 export async function getRepos(user) {
