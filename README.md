@@ -11,8 +11,8 @@
 
 ### 🛠 Bibliotecas
 
-- [React Hook Form](https://react-hook-form.com/)
-- [React Icons](https://react-icons.github.io/react-icons/)
 - [Axios](https://github.com/axios/axios)
-- [React Router Dom](https://reactrouter.com/web/guides/quick-start)
+- [React Icons](https://react-icons.github.io/react-icons/)
 - [React Toastify](https://fkhadra.github.io/react-toastify/introduction/)
+- [React Hook Form](https://react-hook-form.com/)
+- [React Router Dom](https://reactrouter.com/web/guides/quick-start)
