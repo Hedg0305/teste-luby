@@ -43,6 +43,23 @@
     }
 
     .userInfo{
+
+      .name{
+        display: flex;
+        align-items: center;
+      }
+      .name::before{
+        content: '';
+        display: inline-block;
+        margin-left: -24px;
+        margin-right: 14px;
+        height: 42px;
+        width: 10px;
+        background-color: #FFCE00;
+        border-radius: 0 20px 20px 0;
+        
+      }
+
       p{
         color: var(--white);
         font-size: 18px;
@@ -80,6 +97,20 @@
 
     h1{
       margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+    }
+
+    h1::before{
+      content: '';
+      display: inline-block;
+      margin-left: -24px;
+      margin-right: 14px;
+      height: 42px;
+      width: 10px;
+      background-color: #FFCE00;
+      border-radius: 0 20px 20px 0;
+      
     }
 
     p{
@@ -87,6 +118,10 @@
       overflow-y: hidden;
       text-overflow: ellipsis;
     }
+  }
+  .loading{
+    grid-row-start: 1;
+    grid-row-end: 5;
   }
 
 }

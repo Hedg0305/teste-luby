@@ -9,6 +9,20 @@
       font-size: 20px;
       margin-bottom: 9px;
       font-weight: bold;
+      display: flex;
+      align-items:center;
+    }
+    
+    h2::before{
+      content: '';
+      display: inline-block;
+      margin-left: -24px;
+      margin-right: 14px;
+      height: 42px;
+      width: 10px;
+      background-color: #FFCE00;
+      border-radius: 0 20px 20px 0;
+      
     }
     p{
       font-size: 15px;
